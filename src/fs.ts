@@ -68,12 +68,11 @@ export const fileCompare = nodes => {
           file.performStat();
           toVisit.push({ flags: fileFlags, file });
         }
-        catch { }
+        catch {}
       }
       continue;
     }
   }
-  console.log({ bestSource, bestTarget });
   // Doesn't need rebuild if there is no source, but target exists.
   if (!bestSource) {
     return !bestTarget;

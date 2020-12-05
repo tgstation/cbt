@@ -36,9 +36,7 @@ export const Task = (name, effects: BaseEffect[]) => {
       // Consider dependencies first, and skip the task if it
       // doesn't need a rebuild.
       if (deps.length > 0) {
-        console.log(deps);
         const needsRebuild = fileCompare(deps);
-        console.log(needsRebuild);
         if (!needsRebuild) {
           console.warn(` => Skipping '${name}'`);
           return;
